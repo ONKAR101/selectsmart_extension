@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Assistant</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f2f5;
+    }
+
+    /* Chatbot Container */
+    .chatbot-container {
+      width: 360px;
+      height: 600px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Chat Header */
+    .chat-header {
+      background-color: #4a90e2;
+      color: #fff;
+      padding: 15px;
+      font-size: 1.2em;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Chat Messages */
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 80%;
+    }
+
+    .user-message {
+      align-self: flex-end;
+      background-color: #4a90e2;
+      color: #fff;
+    }
+
+    .bot-message {
+      align-self: flex-start;
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    /* Chat Input */
+    .chat-footer {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      background: #f9f9f9;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    .send-button {
+      padding: 10px;
+      background-color: #4a90e2;
+      border: none;
+      color: #fff;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .send-button:hover {
+      background-color: #357abd;
+    }
+
+    .nav {
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    /* Styling for individual links */
+    .nav a {
+      color: blueviolet;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chatbot-container">
+    <!-- <div class="chat-header">Google Chatbot</div> -->
+    <div class="chat-header"><h1>Google Chatbot</h1>
+      <div class="nav">
+        <a href="#" target="_blank">Home</a> |
+        <a target="_blank" href="privacy-policy.html">Privacy-Policy</a>
+      </div>
+    </div>
+
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-footer">
+      <!-- <input type="text" id="chatInput" contenteditable="true" class="chat-input" placeholder="Type a message..."
+        autocomplete="off"> -->
+
+      <input type="text" id="chatInput" class="chat-input" placeholder="Paste text or image here">
+      <input type="file" id="hidden-file-input" accept="image/*" style="display: none;">
+      <div id="screenshot-preview"></div>
+
+      <button id="send-button" class="send-button">Send</button>
+
+
+
+    </div>
+  </div>
+  <script src="popup.js"></script>
+  <script src="services.js"></script>
+  <!-- <script src="./scripts/md-block.js"></script> -->
+</body>
+
+</html>

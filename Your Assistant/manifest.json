@@ -1,0 +1,56 @@
+{
+    "key":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzx3ecIzJwCbO6C/7uDUNNNXzpAHiZ/M2Dzy/NFaRmG6dS+q8eTMjKs11Kq48fK4PVAcmHO9ngYWOpVRbo+WPXJP1D19WvTFWzwjQ3do5z+t6YgIj2NHEAH7QkjM6XQNFaAGEd9GaZ5gqpgzEfkNu+HK0+wE6HD9xdrKWw3kSzCapnGyU649meY5FKmysWK430n93Ouoqmac+TsPqf7xo2bM4QYJL9462LBdbv56l/NXdM1f2PCQ3a3VYQUFqNjLbyEv8Cc09bwp2A7f7ipw1gcxAC/gVrT+zpIQxQYrMB6GV+mNv3qG9lc6X9FH/ff7KuG19axtN9KHYeuZeMVg86wIDAQAB",
+    "manifest_version": 3,
+    "name": "SelectSmart",
+    "version": "1.0",
+    "description": "Enhance Your Browsing Experience with SelectSmart",
+    "permissions": [
+        "contextMenus",
+        "activeTab"
+    ],
+    "icons": {
+        "48": "images/magic-wand.png",
+        "128": "images/magic-wand.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "services.js",
+                "popup.js",
+                "scripts/jquery-3.4.1.min.js"
+            ],
+            "css": []
+        }
+    ],
+    "side_panel": {
+        "default_path": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "popup.html",
+                "home.html",
+                "privacy-policy.html",
+                "Images/*"
+            ],
+            "extension_ids": [
+                "*"
+            ],
+            "matches": [
+                "*://*/*"
+            ]
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* 'sha256-lhWZ4V43lNSq7Dr3Ns3/IxDh7Eg6rEwaGwmZgGmxqw0='"
+    }
+}
