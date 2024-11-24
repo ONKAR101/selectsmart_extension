@@ -1,4 +1,4 @@
-var apiKey = "AIzaSyBakQATervFkxwe8e4YIz8E2KCU1yzvDb4"
+var apiKey = "AIzaSyCy5NT4YMgx2S24lBcQnyJfkYRxAxRoI8Q"
 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
 function geminiAI(text) {
@@ -46,7 +46,7 @@ function geminiAI(text) {
         })
         .catch((error) => {
             if (document.getElementById("markdownOutput") && document.getElementById("overlay_element")) {
-                document.getElementById("markdownOutput").value = "Failed to generate response";
+                document.getElementById("markdownOutput").innerHTML = "Failed to generate response";
             }            
             console.log('Error:', error);
             var error = error.toString();
